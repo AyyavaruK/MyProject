@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Config file for Telligent HR -->
+<telligent>   
+    <tool-db>
+        <db-type>mysql</db-type>
+        <impl>com.telligent.model.db.ConnectionPool</impl>
+        <properties>
+            <username>admin</username>
+            <password>unicornhr</password>
+            <url>jdbc:mysql://unicornhr.c0rw8aasskuw.us-west-2.rds.amazonaws.com:3306/telligentHR</url>
+            <driver>com.mysql.jdbc.Driver</driver>
+            <maxconnections>60</maxconnections>
+            <maxconnectiontime>120</maxconnectiontime>
+            <idleconnectiontime>300</idleconnectiontime>
+            <poolName>defaultpool</poolName>
+        </properties>
+    </tool-db>  
+</telligent>

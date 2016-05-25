@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+        <put-attribute name="title" value=" :: Welcome to Tellient ::" />
+        <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+    </definition>
+	
+	<definition name="baseRateFreq" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/baseRateFreq.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="bonusPlan" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/bonusPlan.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="meritAdminGuidelines" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/meritAdminGuidelines.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="classification" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/classification.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="compensationAction" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/compensationAction.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="compensationActionReason" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/compensationActionReason.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="defaultEarningCode" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/defaultEarningCode.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="defaultHoursFrequency" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/defaultHoursFrequency.jsp"></put-attribute>
+	</definition>
+	<definition name="employeeCategory" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/employeeCategory.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="ethinicity" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/ethinicity.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="flsaCategory" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/flsaCategory.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="fullTimeEquivalency" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/fullTimeEquivalency.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="grade" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/grade.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="jobGroup" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/jobGroup.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="jobGrade" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/jobGrade.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="leaveStatusCode" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/leaveStatusCode.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="leaveStatusReason" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/leaveStatusReason.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="maritalStatus" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/maritalStatus.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="militaryStatus" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/militaryStatus.jsp"></put-attribute>
+	</definition>
+	
+	<!-- aruna -->
+	<definition name="org1" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org1.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org2" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org2.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org3" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org3.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org4" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org4.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org5" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org5.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org6" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org6.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org7" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org7.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org8" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org8.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org9" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org9.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="org10" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/org10.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="payEntity" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/payEntity.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="payFrequency" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/payFrequency.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="payGroup" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/payGroup.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="performanceAdminRole" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/performanceAdminRole.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="performancePlan" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/performancePlan.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="positionLevel" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/positionLevel.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="positionMaster" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/positionMaster.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="primaryJob" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/primaryJob.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="primaryJobLeave" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/primaryJobLeave.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="relationship" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/relationship.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="status" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/status.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="statusCode" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/statusCode.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="statusReason" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/statusReason.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="successionRole" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/successionRole.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="unionCode" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/unionCode.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="veteranStatus" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/veteranStatus.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="visaType" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/visaType.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="bonusAdminRole" extends="base.definition" >
+			<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/bonusAdminRole.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="employementAction" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/employementAction.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="employementActionReason" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/employementActionReason.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="positionAction" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/positionAction.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="positionActionReason" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/positionActionReason.jsp"></put-attribute>
+	</definition>
+	<definition name="city" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/city.jsp"></put-attribute>
+	</definition>
+	<definition name="state" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/state.jsp"></put-attribute>
+	</definition>
+	<definition name="securityGroup" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/securityGroup.jsp"></put-attribute>
+	</definition>
+	<definition name="meritPeriodUpdate" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/meritPeriodUpdate.jsp"></put-attribute>
+	</definition>
+	<definition name="teamUI" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/referenceTables/teamUI.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

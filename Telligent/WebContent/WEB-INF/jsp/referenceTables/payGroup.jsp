@@ -1,0 +1,208 @@
+<%@ include file="../taglib.jsp" %>
+<title>Dashboard</title>
+<link href="view/css/colorbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="view/css/popup.css">
+<link rel="stylesheet" type="text/css" href="view/css/jquery/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="view/css/jquery/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="view/css/jquery/demo.css">
+<script type="text/javascript" src="view/js/jquery/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="view/js/jquery/jquery.usphone.js"></script>
+<script type="text/javascript" src="view/js/app/telligentCommon.js"></script>
+<script type="text/javascript" src="view/js/popup.js"></script>
+<form:form commandName="payGroupDto" id="payGroupDto" modelAttribute="payGroupDto" enctype="multipart/form-data">
+<form:hidden path="successMessage"/>
+<form:hidden path="errorMessage"/>
+<form:hidden path="operation"/>
+<form:hidden path="id"/>
+<input type="hidden" id="updateble">
+<div id="contentArea">
+<div class="loader"></div>
+<div class="contentArea">
+	<%@include file="referenceTablesLeft.jsp" %>
+ 	<div class="innerright" style="min-height: 480px" id="flow">
+ 	<a href="javascript:toggle()" title="Hide Nav 13" id="flowtab"></a>
+ 	<div style="margin:0px;cursor:auto;" id="tab">
+	    <div class="wrap">
+		<table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="E3E3E3" align="right">
+	      <tr>
+	        <th class="head1" height="25" align="left">
+	        <div class="innerpage-breadcrum">
+				<a href="dashboard.htm">Dashboard</a> &nbsp;&gt;&nbsp; 
+				<a href="javascript:void(0);">Reference Tables</a> &nbsp;&gt;&nbsp; 
+				<a href="javascript:void(0);" class="select">Pay Group</a>
+				<span style="float: right">
+				<a href="#" onclick="javascript:reset()" class="easyui-linkbutton" iconCls="icon-add">Add Pay Group</a>
+				<a href="#" onclick="javascript:save()" class="easyui-linkbutton" iconCls="icon-save">Save</a>	
+				</span>		
+			</div>
+			</th>
+	      </tr>
+	    </table>
+	    <table width="100%" border="0" cellspacing="1" cellpadding="5" class="data-table-new" align="right">
+	      <tr>
+		     <th colspan="6" style="text-align: left;padding-left: 10px" class="head">
+    			Pay Group
+    		 </th>
+	      </tr>
+	     
+	      <tr>
+		     <td style="width:20%" nowrap="nowrap">
+    			<label>Pay Group</label><span class="mandatory">*</span>
+    		 </td>
+    		 <td><form:input path="payGroup" cssClass="required" maxlength="65"/> </td>
+	      </tr>
+	       <tr>
+		     <td style="width:20%" nowrap="nowrap">
+    			<label>No of Pay Periods (In a Year)</label><span class="mandatory">*</span>
+    		 </td>
+    		 <td><form:input path="noPayperiods" cssClass="required" onKeyPress="return numbersonly(event, true,this.value)"/> </td>
+	      </tr>
+	      <tr>
+	      <td nowrap="nowrap"><label>Pay Frequency</label><span style="color: red">*</span></td>
+				<td>	
+					<form:select path="payFrequency" cssClass="required">
+				    	<form:option value="">Select</form:option>
+				    	<form:options items="${baseRateFreqList}" itemValue="id" itemLabel="value"/>
+				    </form:select>
+				</td>
+	      </tr>
+	      <tr>
+	      <td style="width: 15%" nowrap="nowrap"><label style="float: right;">Pay Period Begin</label> </td>
+				<td style="width: 21%">
+					<form:hidden path="payPeriodBeginDate"/>
+					 <input id="payPeriodBeginDateBox" class="easyui-datebox" width="150px"/>
+			</td>
+	      </tr>
+	      <tr>
+	      <td style="width: 15%" nowrap="nowrap"><label style="float: right;">Pay Period End</label> </td>
+				<td style="width: 21%">
+					<form:hidden path="payPeriodEndDate"/>
+					 <input id="payPeriodEndDateBox" class="easyui-datebox" width="150px"/>
+			</td>
+	      </tr>
+	      <tr>
+	      <td style="width: 15%" nowrap="nowrap"><label style="float: right;">Pay Date</label> </td>
+				<td style="width: 21%">
+					<form:hidden path="payDate"/>
+					 <input id="payDateBox" class="easyui-datebox" width="150px"/>
+			</td>
+	      </tr>
+	      <tr>
+		     <td>
+    			<label>Is Active</label>
+    		 </td>
+    		 <td><form:checkbox path="isActive" id="isActive" value=""/> </td>
+	      </tr>
+	      <tr>
+	      	<td colspan="8">
+	      		<table id="dataTable"  class="easyui-datagrid"  title="Pay Group Details Table"  style="width:100%;height:270px;table-layout: fixed;"
+						data-options="collapsible:true
+										,method: 'post'
+										,pagination:false
+										,emptyMsg: 'No records found'
+										,fitColumns:true" >
+						<thead>
+							<tr>
+								<th data-options="field:'id',width:100" hidden="true">id</th>
+								<th data-options="field:'payGroup',width:100" formatter="formatDetail">Pay Group</th>
+								<th data-options="field:'noPayperiods',width:100">No of Pay Periods (In a Year)</th>
+								<th data-options="field:'payFrequency',width:100">Pay Frequency</th>
+								<th data-options="field:'payPeriodBeginDate',width:100">Pay Period Begin</th>
+								<th data-options="field:'payPeriodEndDate',width:100">Pay Period End</th>
+								<th data-options="field:'payDate',width:100">Pay Date</th>
+								<th data-options="field:'isActive',width:100">Is Active</th>
+								<th data-options="field:'updatedDate',width:100">Updated Date</th>
+								<th data-options="field:'updatedBy',width:100">Updated By</th>
+							</tr>
+						</thead>
+			</table> 
+	      	</td>
+	      </tr>
+	    </table>
+	</div>
+	</div>
+  </div>
+</div>
+</div> 
+</form:form>
+<script type="text/javascript" src="view/js/docknavigation.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	getDetails('getPayGroupDetails.htm');
+});
+function save(){
+	document.getElementById("payPeriodBeginDate").value = $('#payPeriodBeginDateBox').datebox('getValue');
+	document.getElementById("payPeriodEndDate").value = $('#payPeriodEndDateBox').datebox('getValue');
+	document.getElementById("payDate").value = $('#payDateBox').datebox('getValue');
+	if($('#payGroupDto').valid()){
+		loading();
+		if(document.getElementById("isActive").checked)
+			document.getElementById("isActive").value = true;
+		else
+			document.getElementById("isActive").value = false;
+		$.ajax({
+			url:"savePayGroup.htm",
+			type: "post",
+			data : $("#payGroupDto").serialize(),
+			error: function(obj){
+				alert(obj);
+				closeloading();
+			},
+			success: function(obj){
+				var val = obj.split(':;');
+				if(val[0] == 'success'){
+					alert(val[1]);
+					reset();
+				}else
+					alert(val[1]);
+				closeloading();
+				getDetails('getPayGroupDetails.htm');
+			}});
+	}
+}
+function reset(){
+	document.forms[0].action='payGroup.htm';
+	document.forms[0].method = "post";
+	document.forms[0].submit();
+}
+function formatDetail(value,row,index){
+	return '<a href="#" onclick="javascript:displayExistRecord('+row.id+')">'+value+'</a>';
+}
+function displayExistRecord(id){
+	getPayGroupDetailsById('getPayGroupDetailsById.htm?id='+id);
+}
+function getPayGroupDetailsById(url){
+	loading();
+	$.ajax({
+		url:url,
+		type: "post",
+		dataType: 'json',
+		error: function(obj){
+		},
+		success: function(obj){
+			document.getElementById("payPeriodBeginDate").value = $('#payPeriodBeginDateBox').datebox('getValue');
+			document.getElementById("payPeriodEndDate").value = $('#payPeriodEndDateBox').datebox('getValue');
+			document.getElementById("payDate").value = $('#payDateBox').datebox('getValue');
+			$.each(obj, function(i, item){
+				if(i=='payPeriodBeginDate'){
+			  		$('#payPeriodBeginDateBox').datebox('setValue', item);
+			  		document.getElementById("payPeriodBeginDate").value = item;
+			  	}else if(i=='payPeriodEndDate'){
+			  		$('#payPeriodEndDateBox').datebox('setValue', item);
+			  		document.getElementById("payPeriodEndDate").value = item;
+		  		}else if(i=='payDate'){
+		  			$('#payDateBox').datebox('setValue', item);
+		  		}else if(i == 'isActive'){
+					if(item == "true")
+						document.getElementById('isActive').checked = true;
+					else
+						document.getElementById('isActive').checked = false;
+				}else
+					$("#"+i).val(item);  
+			});
+			document.getElementById("operation").value="update";
+			document.getElementById("payGroup").readOnly=true;
+			closeloading();
+		}});
+}
+</script>

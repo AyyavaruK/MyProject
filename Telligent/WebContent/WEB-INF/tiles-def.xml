@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="base.definition" template="/WEB-INF/jsp/layout.jsp">
+        <put-attribute name="title" value=" :: Welcome to Tellient ::" />
+        <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+    </definition>
+	
+	<definition name="loginForm" template="/WEB-INF/jsp/login.jsp" >
+	</definition>
+	
+	<definition name="dashboard" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/dashboard.jsp"></put-attribute>
+	</definition>
+	<definition name="admindashboard" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/admindashboard.jsp"></put-attribute>
+	</definition>
+	<definition name="userdashboard" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/userdashboard.jsp"></put-attribute>
+	</definition>
+	<definition name="meritAdministration" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/meritAdministration.jsp"></put-attribute>
+	</definition>
+	<definition name="showTeams" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/showTeams.jsp"></put-attribute>
+	</definition>
+	<definition name="changePassword" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/changePassword.jsp"></put-attribute>
+	</definition>
+	<definition name="forgotPassword" template="/WEB-INF/jsp/forgotPassword.jsp">
+	</definition>
+	<definition name="employee" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/employee.jsp"></put-attribute>
+	</definition>
+	<definition name="employeeCompensation" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/employeeCompensation.jsp"></put-attribute>
+	</definition>
+	<definition name="employement" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/employement.jsp"></put-attribute>
+	</definition>
+	<definition name="employeePosition" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/employeePosition.jsp"></put-attribute>
+	</definition>
+	<definition name="employeeOther" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/employeeOther.jsp"></put-attribute>
+	</definition>
+	<definition name="fingerPrints" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/JSGDAppletDemo.html"></put-attribute>
+	</definition>
+	<definition name="appUser" extends="base.definition" >
+		<put-attribute name="body" value="/WEB-INF/jsp/appUser.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
