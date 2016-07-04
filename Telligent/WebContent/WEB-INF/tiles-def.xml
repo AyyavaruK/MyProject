@@ -50,7 +50,7 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/employeeOther.jsp"></put-attribute>
 	</definition>
 	<definition name="fingerPrints" extends="base.definition" >
-		<put-attribute name="body" value="/WEB-INF/jsp/JSGDAppletDemo.html"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/JSGDAppletDemo.jsp"></put-attribute>
 	</definition>
 	<definition name="appUser" extends="base.definition" >
 		<put-attribute name="body" value="/WEB-INF/jsp/appUser.jsp"></put-attribute>

@@ -31,7 +31,7 @@
 					        <div class="innerpage-breadcrum">
 								<a href="dashboard.htm">Dashboard</a> &nbsp;&gt;&nbsp; 
 								<a href="javascript:void(0);">Employee</a> &nbsp;&gt;&nbsp; 
-								<a href="javascript:void(0);" class="select">Employement Details</a>
+								<a href="javascript:void(0);" class="select">Employment Details</a>
 								<!-- <span style="float: right"><a href="dashboard.htm">Back</a></span>  -->
 								<span style="float: right">
 			   						<a href="#" onclick="javascript:save()" class="easyui-linkbutton" iconCls="icon-save">Save</a>			
@@ -195,7 +195,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="width: 15%"><label>Terminination Date</label></td>
+								<td style="width: 15%"><label>Termination Date</label></td>
 								<td style="width: 15%" colspan="5">
 									<form:hidden path="terminationDate"/>
 						    		<input id="terminationDateBox" class="easyui-datebox" width="150px"/>

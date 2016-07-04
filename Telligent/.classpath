@@ -70,8 +70,9 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-4.0.2.GA.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.18.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/json-lib-2.3-jdk15.jar"/>
-	<classpathentry kind="lib" path="G:/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/AbsoluteLayout.jar"/>
-	<classpathentry kind="lib" path="G:/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/AppletDemo.jar"/>
-	<classpathentry kind="lib" path="G:/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/FDxSDKPro.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/FingerPrints"/>
+	<classpathentry kind="lib" path="G:/Reddy/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="G:/Reddy/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/AppletDemo.jar"/>
+	<classpathentry kind="lib" path="G:/Reddy/Chris/FDx SDK Pro for Windows v3.7_J14/FDx SDK Pro for Java v1.4 rev593/FDxSDKPro.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

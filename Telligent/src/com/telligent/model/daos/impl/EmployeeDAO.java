@@ -20,6 +20,7 @@ import com.telligent.common.user.TelligentUser;
 import com.telligent.core.system.annotation.SpringBean;
 import com.telligent.model.db.AbstractDBManager;
 import com.telligent.model.dtos.CityDTO;
+import com.telligent.model.dtos.EmpDTO;
 import com.telligent.model.dtos.EmployeeCompensationDTO;
 import com.telligent.model.dtos.EmployeeDTO;
 import com.telligent.model.dtos.EmployeeOtherDTO;
@@ -29,6 +30,7 @@ import com.telligent.model.dtos.JobGradeDTO;
 import com.telligent.model.dtos.MapDTO;
 import com.telligent.model.dtos.StateDTO;
 import com.telligent.model.dtos.TeamDTO;
+import com.telligent.model.dtos.User;
 import com.telligent.util.BASE64DecodedMultipartFile;
 import com.telligent.util.DateUtility;
 import com.telligent.util.ParseNumberUtility;
@@ -51,17 +53,24 @@ public class EmployeeDAO extends AbstractDBManager{
 	 *  @param employeeId
 	 * 
 	 */
-	public ArrayList<TeamDTO> getEmployeeTeams(String employeeId) {
+	public ArrayList<TeamDTO> getEmployeeTeams(TelligentUser user) {
 		logger.info("in getEmployeeTeam DAO");
 		ArrayList<TeamDTO> list = new ArrayList<TeamDTO>();
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String query = "SELECT t.team_id team_id ,app.team team_name,team_parent FROM team t,Team_Approval_Level app where t.team_name = app.team and app.emp_id=?";
+		String query;
+		if (user.getRole().equalsIgnoreCase("meritAdmin")){
+			query = "SELECT t.team_id team_id ,app.team team_name,team_parent FROM team t,Team_Approval_Level app where t.team_name = app.team ";
+		}else{
+		query = "SELECT t.team_id team_id ,app.team team_name,team_parent FROM team t,Team_Approval_Level app where t.team_name = app.team and app.emp_id=?";
+		}
 		try {
 			conn = this.getConnection();
 			ps = conn.prepareStatement(query);
-			ps.setString(1, employeeId);
+			if (!user.getRole().equalsIgnoreCase("meritAdmin")){
+			ps.setString(1, user.getEmployeeId());
+			}
 			rs = ps.executeQuery();
 			while(rs.next()){
 				TeamDTO dto = new TeamDTO();
@@ -774,7 +783,7 @@ public class EmployeeDAO extends AbstractDBManager{
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		TelligentUser user = telligentUtility.getTelligentUser();
-		ArrayList<TeamDTO> teamList = getEmployeeTeams(user.getEmployeeId());
+		ArrayList<TeamDTO> teamList = getEmployeeTeams(user);
 		String teamIds = "";
 		int i = 0;
 		for(TeamDTO dto : teamList){
@@ -789,6 +798,20 @@ public class EmployeeDAO extends AbstractDBManager{
 		StringBuffer query = new StringBuffer();
 		try {
 			conn = this.getConnection();
+			
+			if (user.getRole().equalsIgnoreCase("meritAdmin")){
+				query.append("select personal.EMP_ID,personal.F_NAME,personal.L_NAME from EMP_PERSONAL personal where ");
+				if(lastName !=null && !lastName.trim().equalsIgnoreCase("")){
+					query.append("personal.L_NAME like '"+lastName+"%'");
+					//query.append(" and personal.EMP_ID = employement.EMP_ID and personal.EMP_ID = position.EMP_ID and position.team in ("+teamIds+") and employement.STATUS=1 order by personal.L_NAME");
+				}else if(firstName !=null && !firstName.trim().equalsIgnoreCase("")){
+					query.append("personal.F_NAME like '"+firstName+"%'");
+					//query.append(" and personal.EMP_ID = employement.EMP_ID and personal.EMP_ID = position.EMP_ID and position.team in ("+teamIds+") and employement.STATUS=1 order by personal.F_NAME");
+				}else if(empId !=null && !empId.trim().equalsIgnoreCase("")){
+					query.append("personal.EMP_ID like '"+empId+"%'");
+					//query.append(" and personal.EMP_ID = employement.EMP_ID and personal.EMP_ID = position.EMP_ID and position.team in ("+teamIds+") and employement.STATUS=1 order by personal.EMP_ID");
+				}
+			}else{
 			query.append("select personal.EMP_ID,personal.F_NAME,personal.L_NAME from EMP_PERSONAL personal,EMP_EMPLOYEMENT employement,EMP_POSITION_DATA position where ");
 			if(lastName !=null && !lastName.trim().equalsIgnoreCase("")){
 				query.append("personal.L_NAME like '"+lastName+"%'");
@@ -799,6 +822,7 @@ public class EmployeeDAO extends AbstractDBManager{
 			}else if(empId !=null && !empId.trim().equalsIgnoreCase("")){
 				query.append("personal.EMP_ID like '"+empId+"%'");
 				query.append(" and personal.EMP_ID = employement.EMP_ID and personal.EMP_ID = position.EMP_ID and position.team in ("+teamIds+") and employement.STATUS=1 order by personal.EMP_ID");
+			}
 			}
 			ps = conn.prepareStatement(query.toString());
 			rs = ps.executeQuery();
@@ -830,7 +854,7 @@ public class EmployeeDAO extends AbstractDBManager{
 		ResultSet rs = null;
 		ArrayList<MapDTO> list = new ArrayList<MapDTO>();
 		TelligentUser user = telligentUtility.getTelligentUser();
-		ArrayList<TeamDTO> teamList = getEmployeeTeams(user.getEmployeeId());
+		ArrayList<TeamDTO> teamList = getEmployeeTeams(user);
 		String teamIds = "";
 		int i = 0;
 		for(TeamDTO dto : teamList){
@@ -2246,6 +2270,36 @@ public class EmployeeDAO extends AbstractDBManager{
 			}
 		}catch (Exception ex) {
 			logger.info("Excpetion in searchCity "+ex.getMessage());
+		} finally {
+			this.closeAll(conn, ps, rs);
+		}
+		return list;
+	}
+	
+	
+	
+	public ArrayList<EmpDTO> searchEmpid(String searchParam){
+		logger.info("in searchEmpid");
+		ArrayList<EmpDTO> list = new ArrayList<EmpDTO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		StringBuffer query = new StringBuffer();
+		try{
+			if(null == searchParam || "".equalsIgnoreCase(searchParam.trim()))
+				query.append("select EMP_NO from FINGER_PRINT");
+			else
+				query.append("select EMP_NO from FINGER_PRINT where upper(EMP_NO) like '"+searchParam.toUpperCase()+"%'");
+			conn = this.getConnection();
+			ps = conn.prepareStatement(query.toString());
+			rs = ps.executeQuery();
+			while(rs.next()){
+				EmpDTO dto = new EmpDTO();
+				dto.setEmployeeId(rs.getString("EMP_NO"));
+				list.add(dto);
+			}
+		}catch (Exception ex) {
+			logger.info("Excpetion in searchEmpid "+ex.getMessage());
 		} finally {
 			this.closeAll(conn, ps, rs);
 		}

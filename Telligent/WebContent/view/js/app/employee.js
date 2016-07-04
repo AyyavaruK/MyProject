@@ -93,6 +93,8 @@ function setEmployeeDetails(obj,id){
 	  			$('#cityId').combobox('setValue', item);
 	  		}else if(i=='state'){
 	  			$('#stateId').combobox('setValue', item);
+	  		}else if(i=='employeeId'){
+	  			$('#employeeId').combobox('setValue', item);
 	  		}else if(i=='minor'){
 		  		if(item)
 		  			document.getElementById(i).checked = true;

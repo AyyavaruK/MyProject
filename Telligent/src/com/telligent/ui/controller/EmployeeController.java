@@ -25,6 +25,7 @@ import com.telligent.common.handlers.MessageHandler;
 import com.telligent.common.user.TelligentUser;
 import com.telligent.model.daos.impl.EmployeeDAO;
 import com.telligent.model.dtos.CityDTO;
+import com.telligent.model.dtos.EmpDTO;
 import com.telligent.model.dtos.EmployeeCompensationDTO;
 import com.telligent.model.dtos.EmployeeDTO;
 import com.telligent.model.dtos.EmployeeOtherDTO;
@@ -61,7 +62,7 @@ public class EmployeeController {
 	public ModelAndView showTeams(HttpServletRequest req,HttpServletResponse res,ModelAndView mav){
 		logger.info("In showTeams");
 		TelligentUser user = telligentUtility.getTelligentUser();
-		ArrayList<TeamDTO> teamList = employeeDAO.getEmployeeTeams(user.getEmployeeId());
+		ArrayList<TeamDTO> teamList = employeeDAO.getEmployeeTeams(user);
 		mav.addObject("teams", teamList);
 		if(teamList.size() > 0){
 			mav.addObject("teamName",teamList.get(0).getTeamName());
@@ -467,6 +468,18 @@ public class EmployeeController {
 		JSONArray obj = (JSONArray) JSONSerializer.toJSON(list);
 		return obj;
 	}
+	
+	
+	@RequestMapping(value="/empid.htm", method = RequestMethod.POST)
+	public @ResponseBody JSONArray searchEmpid(HttpServletRequest req,HttpServletResponse res,ModelAndView mav){
+		ArrayList<EmpDTO> list = new ArrayList<EmpDTO>();
+		if(req.getParameter("q") !=null && !req.getParameter("q").equalsIgnoreCase(""))
+			list.addAll(employeeDAO.searchEmpid(req.getParameter("q")));
+		JSONArray obj = (JSONArray) JSONSerializer.toJSON(list);
+		return obj;
+	}
+	
+	
 	@RequestMapping(value="/searchState.htm", method = RequestMethod.POST)
 	public @ResponseBody JSONArray searchState(HttpServletRequest req,HttpServletResponse res,ModelAndView mav,@ModelAttribute("employee") EmployeeDTO dto){
 		ArrayList<StateDTO> list = new ArrayList<StateDTO>();
@@ -510,5 +523,18 @@ public class EmployeeController {
 			return employeeDAO.fillAllDetails(req.getParameter("empId"));
 		else
 			return "";
+	}
+	
+	@RequestMapping(value="/showFingerPrintsPage.htm", method = RequestMethod.GET)
+	public ModelAndView showFingerPrintsPageGet(HttpServletRequest req,HttpServletResponse res,ModelAndView mav){
+		return showFingerPrintsPage(req, res, mav);
+	}
+	
+	@RequestMapping(value="/showFingerPrintsPage.htm", method = RequestMethod.POST)
+	public ModelAndView showFingerPrintsPage(HttpServletRequest req,HttpServletResponse res,ModelAndView mav){
+		logger.info("in showFingerPrintsPage");
+		mav.addObject("employee", new EmployeeDTO());
+		mav.setViewName("fingerPrints");
+		return mav;
 	}
 }

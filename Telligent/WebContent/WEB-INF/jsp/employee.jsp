@@ -88,7 +88,22 @@
 	                      <td width="14%"><form:input path="employeeNo" cssClass="required"  maxlength="14"/></td> --%>
 	                      <td width="8%" nowrap="nowrap"><label>Employee Id</label>
 	                        <span style="color: red">*</span></td>
-	                      <td width="14%"><form:input path="employeeId" cssClass="required" maxlength="14"/></td>
+	                     <!-- <td width="14%"><form:input path="employeeId" cssClass="required" maxlength="14"/></td>  --> 
+	                     
+	                     
+	                     <td align="left" valign="middle">
+	                            	<input class="easyui-combobox required" name="employeeId" id="employeeId" style="width:100px" data-options="
+										url:'empid.htm',
+										method:'post',
+										mode: 'remote',
+										valueField: 'employeeId',
+										textField: 'employeeId',
+										selectOnNavigation:false
+										">
+	                            </td>
+	                     
+	                     
+	                     
 	                      <td width="8%" nowrap="nowrap"><label>Social Sec #</label></td>
 	                      <td width="14%"><form:input path="socialSecNo" onKeyPress="return numbersonly(event, true,this.value)" maxlength="14"/></td>
 	                      <td width="8%" nowrap="nowrap" style="width: 10%"><label>Badge No</label></td>

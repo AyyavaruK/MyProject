@@ -1,3 +1,90 @@
 Manifest-Version: 1.0
-Class-Path: 
+Created-By: 1.6.0_38 (Sun Microsystems Inc.)
+
+Name: SecuGen/FDxSDKPro/jni/SGCallBackFunction.class
+SHA1-Digest: vmQWi5Q4opzILnbuqvV2nEXCD90=
+
+Name: SecuGen/FDxSDKPro/jni/JSGFPLib.class
+SHA1-Digest: 9XG088DKRy89ROmVK7Ry7xNZuEA=
+
+Name: applet/JSGDApplet.class
+SHA1-Digest: /emb9WUY61aq3VhL9FDPxWMKvsc=
+
+Name: applet/JSGDApplet$8.class
+SHA1-Digest: 3rM2b/3HLOXonoRakl0gUKx4CaY=
+
+Name: SecuGen/FDxSDKPro/jni/SGFingerInfo.class
+SHA1-Digest: lDvn+UGPhZn2ieYNfOO5ZZJSV8s=
+
+Name: applet/JSGDApplet$11.class
+SHA1-Digest: 37K9lKxKmCOKOFV2E2asd///RRY=
+
+Name: applet/JSGDApplet$4.class
+SHA1-Digest: cG20WQwb0I/mmfekOwHRYbtshsc=
+
+Name: SecuGen/FDxSDKPro/jni/SGISOTemplateInfo.class
+SHA1-Digest: vYpAPyth/vyOCpD6+pocbEmc5Gs=
+
+Name: applet/JSGDApplet$3.class
+SHA1-Digest: 99jSlDbPlLXhb6zXRa7cSqdln34=
+
+Name: org/netbeans/lib/awtextra/AbsoluteConstraints.class
+SHA1-Digest: 6mOssPOobXYMFrHvJQGzOfeB6tA=
+
+Name: applet/JSGDApplet$9.class
+SHA1-Digest: a34LGV/EqwOrpVZlBk5UC+U1s0c=
+
+Name: org/netbeans/lib/awtextra/AbsoluteLayout.class
+SHA1-Digest: bsGo7lmvbq4WtmTrFPL4FkmcXVA=
+
+Name: SecuGen/FDxSDKPro/jni/SGFDxSecurityLevel.class
+SHA1-Digest: sJblkT1NSHU0lLoFMGvDEW08gjc=
+
+Name: SecuGen/FDxSDKPro/jni/SGFDxErrorCode.class
+SHA1-Digest: mkv5Gva2m40blD57H+v3Bu+AMg4=
+
+Name: SecuGen/FDxSDKPro/jni/SGANSITemplateInfo.class
+SHA1-Digest: vzgKeRilnQTA2x0/LfHDdvGZP3c=
+
+Name: applet/JSGDApplet$5.class
+SHA1-Digest: su+E3R/eQg16RPlojM3I7dczb7U=
+
+Name: SecuGen/FDxSDKPro/jni/SGFDxDeviceName.class
+SHA1-Digest: +LqdovYqrfg1HSprL6P5MzTyNUg=
+
+Name: applet/JSGDApplet$1.class
+SHA1-Digest: vE4VDrnpryjfm1Sm9MhbQKsCr4A=
+
+Name: SecuGen/FDxSDKPro/jni/SGImpressionType.class
+SHA1-Digest: ZWyYKJvEvfan05kKiTtx0gffQ4M=
+
+Name: SecuGen/FDxSDKPro/jni/SGDeviceList.class
+SHA1-Digest: VC6X2gYuWwJ+9OxPRFgxTaAFnsQ=
+
+Name: SecuGen/FDxSDKPro/jni/SGPPPortAddr.class
+SHA1-Digest: qjhlejbpTCKVEzFBV4Yu+/sDDko=
+
+Name: applet/JSGDApplet$10.class
+SHA1-Digest: Dvmyv59EOqYWy8Hx1krOT56DLoo=
+
+Name: applet/JSGDApplet$7.class
+SHA1-Digest: 4i/Bx61v4vbvGb8h/eoH3vBTNNQ=
+
+Name: SecuGen/FDxSDKPro/jni/SGFDxConstant.class
+SHA1-Digest: 8N+x7o36eJicKPu1BYguYVSWbq8=
+
+Name: applet/JSGDApplet$2.class
+SHA1-Digest: 6svaZxBmTvCWzjzJm8w4eGHlBWo=
+
+Name: SecuGen/FDxSDKPro/jni/SGFingerPosition.class
+SHA1-Digest: ae/PzCviu3pDfedb0tbY8GviMV4=
+
+Name: applet/JSGDApplet$6.class
+SHA1-Digest: Q03jU3M0nmW6jrAwf6rDGQ420ow=
+
+Name: SecuGen/FDxSDKPro/jni/SGDeviceInfoParam.class
+SHA1-Digest: IpfkiNYc4bX7PA8Zh5y3gyCha6s=
+
+Name: SecuGen/FDxSDKPro/jni/SGFDxTemplateFormat.class
+SHA1-Digest: 4DZCnV9d4mF1gcw8SPbkDiADoco=
 

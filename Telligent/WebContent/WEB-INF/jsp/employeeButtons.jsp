@@ -2,7 +2,7 @@
    	<tr>
    		<td style="width: 40px"><input type="button" class="button" value="Personal" id="personal" onclick="javascript:showPersonalPage()"></td>
    		<td style="width: 40px"><input type="button" class="button" value="Compensation" id="compensation" onclick="javascript:showCompensationPage()"></td>
-   		<td style="width: 40px"><input type="button" class="button" value="Employement" id="employement" onclick="javascript:showEmployementPage()"></td>
+   		<td style="width: 40px"><input type="button" class="button" value="Employment" id="employement" onclick="javascript:showEmployementPage()"></td>
    		<td style="width: 40px"><input type="button" class="button" value="Position" id="positionButton" onclick="javascript:showPositionPage()"></td>
    		<td style="width: 40px"><input type="button" class="button" value="Other Data" id="otherData" onclick="javascript:showOtherDataPage()"></td>
    		<td><input type="button" class="button" value="FingerPrints" id="finger" onclick="javascript:showFingerPrints()"></td>
@@ -18,7 +18,11 @@
 </table>
 <script type="text/javascript">
 function showFingerPrints(){
-	document.open("/WEB-INF/jsp/JSGDAppletDemo.html");
+	document.forms[0].action="showFingerPrintsPage.htm";
+	document.forms[0].method = "post";
+	document.forms[0].submit();
+	
+	//window.open("/WEB-INF/jsp/JSGDAppletDemo.html");
 }
 
 
