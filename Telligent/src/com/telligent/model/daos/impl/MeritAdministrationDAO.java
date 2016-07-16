@@ -1127,7 +1127,7 @@ public class MeritAdministrationDAO extends AbstractDBManager implements IMeritA
 		ResultSet rs = null;
 		EmployeeDAO empDao =  new EmployeeDAO();
 		TelligentUser user = telligentUtility.getTelligentUser();
-		ArrayList<TeamDTO> list =empDao.getEmployeeTeams(user.getEmployeeId());
+		ArrayList<TeamDTO> list =empDao.getEmployeeTeams(user);
 		ArrayList<AppUserListDTO> finalList  = null;
 		String teams ="";
 		int i =0;

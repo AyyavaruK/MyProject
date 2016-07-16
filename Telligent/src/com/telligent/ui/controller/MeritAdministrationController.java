@@ -57,7 +57,7 @@ public class MeritAdministrationController {
 	public ModelAndView showMeritAdministration(HttpServletRequest req,HttpServletResponse res,ModelAndView mav){
 		logger.info("In showMeritAdministration");
 		TelligentUser user = telligentUtility.getTelligentUser();
-		ArrayList<TeamDTO> teamList = employeeDAO.getEmployeeTeams(user.getEmployeeId());
+		ArrayList<TeamDTO> teamList = employeeDAO.getEmployeeTeams(user);
 		mav.addObject("teams", teamList);
 		if(teamList.size() > 0){
 			mav.addObject("teamName",teamList.get(0).getTeamName());
