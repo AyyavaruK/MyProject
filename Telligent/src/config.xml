@@ -5,9 +5,13 @@
         <db-type>mysql</db-type>
         <impl>com.telligent.model.db.ConnectionPool</impl>
         <properties>
-            <username>admin</username>
-            <password>unicornhr</password>
-            <url>jdbc:mysql://unicornhr.c0rw8aasskuw.us-west-2.rds.amazonaws.com:3306/telligentHR</url>
+           <!--  <username>admin</username>
+            <password>telligent</password>
+            <url>jdbc:mysql://telligentdb.c0rw8aasskuw.us-west-2.rds.amazonaws.com:3306/telligentHR</url>
+             -->
+             <username>telligentadmin</username>
+            <password>telligentadmin</password>
+            <url>jdbc:mysql://telligentdb.cocxmswzapnw.us-west-2.rds.amazonaws.com:3306/telligentHR</url>
             <driver>com.mysql.jdbc.Driver</driver>
             <maxconnections>60</maxconnections>
             <maxconnectiontime>120</maxconnectiontime>
